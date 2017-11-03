@@ -62,13 +62,12 @@ block content
 								li.disabled: a(href='?page=' + data.posts.totalPages): span.entypo.glyphicon.glyphicon-chevron-right
 				else
 					if data.category
-						h3.text-muted There are no posts in the category #{data.category.name}.
+						h4.text-flow There are no posts in the category #{data.category.name}.
 					else
-						h3.text-muted There are no posts yet.
+						h4.text-flow There are no posts yet.
 		
 		if data.categories.length
 			.col-sm-4.col-md-3
-				h5 Categories
 				.list-group(style='margin-top: 70px;')
 					a(href='/news', class=!data.category ? 'active' : false).list-group-item All Categories
 					each cat in data.categories

@@ -31,6 +31,8 @@ var routes = {
 	views: importRoutes('./views'),
 };
 
+
+
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	// Views

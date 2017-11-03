@@ -5,6 +5,11 @@
  *
  * Made By MaterializeCSS.com
  */
+body {
+    	display: flex;
+    	min-height: 100vh;
+    	flex-direction: column;
+}
 
 nav ul a,
 nav .brand-logo {
@@ -39,12 +44,6 @@ p {
   }
 }
 
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
-}
-
 .icon-block {
   padding: 0 15px;
 }
@@ -61,7 +60,13 @@ footer.page-footer {
   text-decoration: underline;
 }
 
-.form-control {
-  
-}
+  footer {
+    flex: 1 0 auto;
+    max-height: 270px;
+  }
 
+@media only screen and (max-width: 600px) {
+	#index-banner .section {
+		top: 0;
+	}
+}

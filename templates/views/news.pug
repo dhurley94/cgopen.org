@@ -2,14 +2,14 @@ extends ../layouts/default
 
 mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-		h2: a(href='/blog/post/' + post.slug)= post.title
+		h2: a(href='/news/post/' + post.slug)= post.title
 		p.lead.text-muted Posted 
 			if post.publishedDate
 				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
 			if post.categories && post.categories.length
 				| in 
 				each cat, i in post.categories
-					a(href='/blog/' + cat.key)= cat.name
+					a(href='/news/' + cat.key)= cat.name
 					if i < post.categories.length - 1
 						| , 
 					else
@@ -20,11 +20,11 @@ mixin post(post)
 			img(src=post._.image.fit(160,160)).img.pull-right
 		p!= post.content.brief
 		if post.content.extended
-			p.read-more: a(href='/blog/post/' + post.slug) Read more...
+			p.read-more: a(href='/news/post/' + post.slug) Read more...
 
 block intro
 	.container
-		h1= data.category ? data.category.name : 'Blog'
+		h1= data.category ? data.category.name : 'News'
 
 block content
 	.container: .row
@@ -43,7 +43,7 @@ block content
 							|  posts.
 					else
 						h4.text-weight-normal Showing #{utils.plural(data.posts.results.length, '* post')}.
-					.blog
+					.news
 						each post in data.posts.results
 							+post(post)
 					
@@ -70,6 +70,6 @@ block content
 			.col-sm-4.col-md-3
 				h2 Categories
 				.list-group(style='margin-top: 70px;')
-					a(href='/blog', class=!data.category ? 'active' : false).list-group-item All Categories
+					a(href='/news', class=!data.category ? 'active' : false).list-group-item All Categories
 					each cat in data.categories
-						a(href='/blog/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+						a(href='/news/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name

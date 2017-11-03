@@ -47,10 +47,10 @@ exports.flashMessages = function (req, res, next) {
  * Verifies user is authenticated with Steam
  * use on protected pages
  */
-exports.ensureAuthenticated = function (req, res, next) {
-	if (req.isAuthenticated()) { return next(); }
-	res.redirect('/');
-};
+// exports.ensureAuthenticated = function (req, res, next) {
+// 	if (req.isAuthenticated()) { return next(); }
+// 	res.redirect('/');
+// };
 
 /**
 	Prevents people from accessing protected pages when they're not signed in

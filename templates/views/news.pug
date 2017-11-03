@@ -2,7 +2,7 @@ extends ../layouts/default
 
 mixin post(post)
 	.post(data-ks-editable=editable(user, { list: 'Post', id: post.id }))
-		h2: a(href='/news/post/' + post.slug)= post.title
+		h4: a(href='/news/post/' + post.slug)= post.title
 		p.lead.text-muted Posted 
 			if post.publishedDate
 				| on #{post._.publishedDate.format('MMMM Do, YYYY')} 
@@ -24,7 +24,7 @@ mixin post(post)
 
 block intro
 	.container
-		h1= data.category ? data.category.name : 'News'
+		h3= data.category ? data.category.name : 'News'
 
 block content
 	.container: .row
@@ -68,8 +68,9 @@ block content
 		
 		if data.categories.length
 			.col-sm-4.col-md-3
-				h2 Categories
+				h5 Categories
 				.list-group(style='margin-top: 70px;')
 					a(href='/news', class=!data.category ? 'active' : false).list-group-item All Categories
 					each cat in data.categories
-						a(href='/news/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name
+						li.catagoryList
+							a(href='/news/' + cat.key, class=data.category && data.category.id == cat.id ? 'active' : false).list-group-item= cat.name

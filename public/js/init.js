@@ -7,7 +7,8 @@
   }); // end of document ready
 })(jQuery); // end of jQuery name space
 
-$("#year").text((new Date).getFullYear());
 $(document).ready(function () {
+  $("#year").text((new Date).getFullYear());
   $('.modal').modal();
+  $('#textarea1').trigger('autoresize');
 });

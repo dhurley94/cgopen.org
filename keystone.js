@@ -10,7 +10,7 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'name': 'cgopen.org',
+	'name': 'www.cgopen.org',
 	'brand': 'cgopen.org',
 
 	'less': 'public',

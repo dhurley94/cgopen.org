@@ -1,23 +1,74 @@
 extends ../layouts/default
 
 block content
-	.container: .jumbotron
-		img(src='/images/logo.svg', width='160')
-		h1 Welcome
-		p This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.
-		p It includes the latest versions of
-			| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
-		hr
-		if user && user.canAccessKeystone
-			p
-				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
-		else
-			p We have created a default Admin user for you with the email <strong>admin@cgopen.org</strong> and the password <strong>admin</strong>.
-			p
-				a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
-				|  to use the Admin UI.
-		hr
-		p Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			| <a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
+	// Parallax1
+	#index-banner.parallax-container
+		.section.no-pad-bot
+			.container
+				.br
+				.br
+					h1.header.center.teal-text.text-lighten-2 CyberGaming Open
+					.row.center
+						h5.header.col.s12.light A community driven PUG system for all
+					.row.center
+						a(href="#newsletter", id="newsletter-button", class="btn-large waves-effect waves-light teal lighten-1 pulse modal-trigger") Get Updates!
+					.br
+					.br
+
+		.parallax
+			img(src="/img/parallax1.jpg", alt="Unsplashed background img 1")
+
+	.container
+		.section
+			.row
+				.col.s12.m4
+					.icon-block
+						h2.center.brown-text
+							i.material-icons flash_on
+						h5.center Queue with your Friends
+						p.light Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultriciesmi vitae est. Mauris placerat eleifend leo.
+				.col.s12.m4
+					.icon-block
+						h2.center.brown-text
+							i.material-icons group
+						h5.center Fun times to be had
+						p.light Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultriciesmi vitae est. Mauris placerat eleifend leo.
+				.col.s12.m4
+					.icon-block
+						h2.center.brown-text
+							i.material-icons settings
+						h5.center Not scummy Support
+						p.light Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultriciesmi vitae est. Mauris placerat eleifend leo.
+
+	.parallax-container.valign-wrapper
+		.section.no-pad-bot
+			.container
+				.row.center
+					h5.header.col.s12.light Simplistic Queing System with 1,000,000 Tick Servers!	
+		.parallax
+			img(src="/img/parallax3.jpg", alt="Unsplashed background img 2")
+		
+	.container
+		#about.section.scrollspy
+			.row
+				.col.s12.center
+					h1 Who is CyberGaming Open?
+					p.light The CGO is an organization founded in 2017 based on providing a community and competitive outlet for the standalone release of Classic Offensive. The community intends to be a host for leagues, tournaments, and community servers based around Classic Offensive, with the possibility of branching in the future. We as an organization are a group of students working on this passion project as a full time endeavor, and promise that we won't mine bitcoin off of you.</p>
+
+	.parallax-container.valign-wrapper
+		.section.no-pad-bot
+			.container
+		.parallax
+			img(src="/img/parallax4.jpg", alt="Unsplashed background img 5")
+
+	#newsletter.modal
+		.modal-content
+			h4 Subscribe to the newletter to receive updates on our progress!
+			#newsletter_form
+				h1.signup_label Stay in touch!
+				form(id="form1" method="POST")
+					input(type="text" name="user_name" id="user_name" placeholder="Enter Your Name or Alias")
+					input(type="text" class="validate" name="email" id="email" placeholder="Email Address")
+					.modal-footer
+						a(href="#" class="modal-action modal-close waves-effect waves-green btn-flat" onclick="document.getElementById('form1').submit();") Subscribe 
+						a(href="#!" class="modal-action modal-close waves-effect waves-green btn-flat") Close 

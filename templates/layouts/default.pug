@@ -15,7 +15,6 @@ html
 		//- Customise the stylesheet for your site by editing /public/styles/site.less
 		//- All .less files will be automatically compiled and minified in production.
 		link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
-		link(href="/css/materialize.css", rel="stylesheet")
 		link(href="/css/materialize.min.css", rel="stylesheet")
 		link(href="/css/style.css", rel="stylesheet")
 		//- This file provides the default styling for the KeystoneJS Content Editor
@@ -39,10 +38,10 @@ html
 	body
 
 		//- HEADER
-		#nav: .white(role="navigation")
+		nav.white(role="navigation")
 			div.nav-wrapper.container
 				a(href="/", id="#logo-container").brand-logo
-				 	img(src="/img/logo.png", width="50px", height="50px" alt="logo")
+					img(src="/img/logo.png", width="50px", height="50px" alt="logo")
 				ul.right.hide-on-med-and-down
 					each link in navLinks
 						li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
@@ -52,8 +51,8 @@ html
 
 				a(href="#", data-activates="nav-mobile").button-collapse
 					i.material-icons("menu")
-		
-						
+
+
 			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
 			//- ... or completely change this header to suit your design.
 
@@ -97,17 +96,38 @@ html
 
 
 		//- FOOTER
-		.container: #footer
+		footer.page-footer.teal
+			.container
+				.row
+					.col.l6.s12
+						h5.white-text Network Status
+						p.grey-text.text-lighten-4
+							img(src="/img/networkmap.png", height="60%", width="60%", alt="network-map")
+					.col.l3.s12
+						h5.white-text Twitter
+						ul
+							each link in navLinks
+								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+					.col.l3.s12
+						h5.white-text Login
+						ul
+							li.section
+								a(href='/keystone') Admin UI
+							li.section
+								a(href='/keystone/signin') Admin Signin
 
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+		.footer-copyright
+			.container
+				a(class="brown-text text-lighten-3" href="/") cgOpen.org&trade; 
+					<span id="year"></span>
+							
 
 
 		//- JAVASCRIPT
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-		script(src='/js/materialize.js')
 		script(src='/js/materialize.min.js')
 		script(src='/js/init.js')
+
 
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone

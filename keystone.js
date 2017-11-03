@@ -28,6 +28,7 @@ keystone.init({
 	
 	'auth': true,
 	'user model': 'User',
+	'newsletter model': 'Newsletter',
 });
 
 // Load your project's Models

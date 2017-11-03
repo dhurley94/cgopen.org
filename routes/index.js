@@ -40,8 +40,8 @@ exports = module.exports = function (app) {
 	app.get('/about', routes.views.about);
 	app.all('/newsletter', routes.views.newsletter);
 	app.all('/contact', routes.views.contact);
-	// app.all('/login', routes.views.login);
 
+	// Steam Routes & Views
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 };

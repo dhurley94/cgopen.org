@@ -1,0 +1,19 @@
+extends ../layouts/default
+
+block intro
+	.container
+		h1 Steam Login
+block content
+	.container
+		.row: .col-sm-8.col-md-6
+			form(method='post')
+				input(type='hidden', name='action', value='steamLogin')
+				.form-group(class=validationErrors.name ? 'has-error' : null)
+					label Username / Email
+					input(type='text', name='alias', value=formData['name.full']).form-control
+				.form-group
+					label Password
+					input(type='password', name='password', value=formData.password.form-control
+				.form-actions
+                    button(type='reset').btn.btn-primary Reset
+					button(type='submit').btn.btn-primary Login

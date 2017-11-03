@@ -10,7 +10,7 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'name': 'www.cgopen.org',
+	'name': 'cgopen.org',
 	'brand': 'cgopen.org',
 
 	'less': 'public',
@@ -51,6 +51,7 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	posts: ['posts', 'post-categories'],
 	enquiries: 'enquiries',
+	servers: 'servers',
 	users: 'users',
 });
 

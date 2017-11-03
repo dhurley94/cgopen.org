@@ -21,7 +21,7 @@ exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: 'Home', key: 'home', href: '/' },
 		{ label: 'News', key: 'news', href: '/news' },
-		{ label: 'About', key: 'about', href: '#about' },
+		{ label: 'About', key: 'about', href: '/about' },
 		{ label: 'Contact', key: 'contact', href: '/contact' },
 	];
 	res.locals.user = req.user;
@@ -43,6 +43,14 @@ exports.flashMessages = function (req, res, next) {
 	next();
 };
 
+/**
+ * Verifies user is authenticated with Steam
+ * use on protected pages
+ */
+exports.ensureAuthenticated = function (req, res, next) {
+	if (req.isAuthenticated()) { return next(); }
+	res.redirect('/');
+};
 
 /**
 	Prevents people from accessing protected pages when they're not signed in

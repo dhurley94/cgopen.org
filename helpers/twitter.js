@@ -1,8 +1,8 @@
 var request = require('request');
 
 let twitClient = {
-    apiKey: 'KZdbFXJc6oysCBNDcu2Xxtmxj',
-    secret: 'V8Qjacerev26jY3E0ddE9qylNBwQuaa0XS1EwuYRvMkUQgrBM6',
+    apiKey: '',
+    secret: '',
 };
 
 module.exports = {

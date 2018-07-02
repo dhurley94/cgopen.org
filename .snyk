@@ -1,0 +1,16 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.12.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:lodash:20180130':
+    - steam-login > request-promise > lodash:
+        patched: '2018-07-02T21:26:26.219Z'
+    - keystone-email > juice > web-resource-inliner > lodash:
+        patched: '2018-07-02T21:26:26.219Z'
+    - keystone > asyncdi > lodash:
+        patched: '2018-07-02T21:26:26.219Z'
+    - keystone > cloudinary > lodash:
+        patched: '2018-07-02T21:26:26.219Z'
+    - keystone > grappling-hook > lodash:
+        patched: '2018-07-02T21:26:26.219Z'

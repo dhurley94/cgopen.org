@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "async": "2.1.4",
-    "babel-core": "6.7.7",
+    "babel-core": "6.9.0",
     "babelify": "7.2.0",
     "body-parser": "1.15.2",
     "browserify-middleware": "7.0.0",
@@ -24,7 +24,8 @@
     "request": "^2.69.0",
     "steam-login": "^0.1.6",
     "store-prototype": "1.1.1",
-    "superagent": "1.8.5"
+    "superagent": "1.8.5",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "eslint": "3.15.0",
@@ -37,6 +38,9 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "node keystone.js"
-  }
+    "start": "node keystone.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }

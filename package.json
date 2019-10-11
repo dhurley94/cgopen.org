@@ -19,7 +19,7 @@
     "keystone-email": "1.0.5",
     "lodash": "^4.17.12",
     "net": "^1.0.2",
-    "newrelic": "1.26.2",
+    "newrelic": "5.13.1",
     "pug": "2.0.0-beta11",
     "request": "^2.69.0",
     "steam-login": "^0.1.6",

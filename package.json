@@ -24,7 +24,8 @@
     "request": "^2.69.0",
     "steam-login": "^0.1.6",
     "store-prototype": "1.1.1",
-    "superagent": "1.8.5"
+    "superagent": "1.8.5",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "eslint": "3.15.0",
@@ -37,6 +38,9 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "node keystone.js"
-  }
+    "start": "node keystone.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }

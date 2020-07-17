@@ -15,7 +15,7 @@
     "express-session": "^1.15.6",
     "graphql": "0.4.18",
     "graphql-relay": "0.3.6",
-    "keystone": "4.0.0",
+    "keystone": "4.1.0",
     "keystone-email": "1.0.5",
     "lodash": "^4.17.12",
     "net": "^1.0.2",

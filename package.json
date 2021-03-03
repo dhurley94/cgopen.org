@@ -20,7 +20,7 @@
     "lodash": "^4.17.12",
     "net": "^1.0.2",
     "newrelic": "1.26.2",
-    "pug": "2.0.0-beta11",
+    "pug": "3.0.1",
     "request": "^2.69.0",
     "steam-login": "^0.1.6",
     "store-prototype": "1.1.1",
